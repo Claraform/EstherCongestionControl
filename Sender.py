@@ -38,6 +38,7 @@ class Sender:
       p = ack.decode('UTF-8')
       #print(p)
       self.period = float(p)
+      file.write(str(p) + "\n")
 
     def close(self):
         self.server.close()
@@ -46,6 +47,9 @@ class Sender:
 if __name__ == "__main__":
     # Instantiate a sender class
     s = Sender()
-    for i in range(100):
+    file = open("./results.csv", "w")
+    file.write("Iteration, Period\n")
+    for i in range(600):
+        file.write(str(i) + ",")
         s.send()
     s.close()

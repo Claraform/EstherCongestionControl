@@ -44,7 +44,7 @@ class Receiver:
                 print("Timestamp arrived late!")
                 print("Difference is {} ".format((rightnow - self.next_expected).total_seconds()))
                 # TODO: Send response to server to tell em to slow down
-                newperiod = period * 1.1
+                newperiod = period * 1.3
                 print("Setting period to", newperiod)
                 #message = b'slow'
                 #self.client.sendto(newperiod, addr)
@@ -53,7 +53,7 @@ class Receiver:
                 print("Difference is {} ".format((self.next_expected-rightnow).total_seconds()))
                 # TODO: Send response to server to tell em to speed up
                 #message = b'fast'
-                newperiod = period * 0.9
+                newperiod = period * 0.7
                 print("Setting period to", newperiod)
         
         message = str(newperiod).encode('utf_8')
