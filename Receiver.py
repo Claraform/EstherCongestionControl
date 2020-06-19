@@ -1,7 +1,7 @@
 """
-TCP ESTHER RECEIVER
+ESTHER CONGESTION CONTROL RECEIVER
 
-Receivers listen for TCP Esther packets, and, of needed, replies with a speed up or slow down message.
+Receivers listen for ECC packets, and, of needed, replies with a speed up or slow down message.
 
 
 Ty to https://raw.githubusercontent.com/ninedraft/python-udp/master/client.py

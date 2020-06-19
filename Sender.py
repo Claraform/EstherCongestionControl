@@ -1,7 +1,7 @@
 """
-TCP ESTHER SENDER
+ESTHER CONGESTION CONTROL SENDER
 
-TCP Esther Senders periodically broadcast packets over a network. It also listens for replies from receivers indicate a
+ECC Senders periodically broadcast packets over a network. It also listens for replies from receivers indicate a
 "speed up" or "slow down" message.
 The rate at which the Sender transmits these packets is adjusted according to responses from Receivers.
 
@@ -22,7 +22,7 @@ class Sender:
         self.server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
         self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)  # Enable reuse
         self.server.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)  # Enable broadcasting mode
-        self.server.settimeout(100)
+        self.server.settimeout(10)
 
     def send(self):
         TS = datetime.now()

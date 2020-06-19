@@ -1,9 +1,9 @@
-# TCP Esther
+# Esther Congestion Control
 
-A SSCCA (super Simple Congenstion Control Algorithm) created because we had to and somehow might know better than people who have dedicated their lives to creating congestion control algorithms.
+A SSCCA (super Simple Congenstion Control Algorithm).
 
 ## Overview
-TCP Esther works as a closed system negative feedback loop.  
+Esther Congestion Control (ECC) works as a closed system negative feedback loop.  
 
 A sender periodically send packets containing a timestamp and the period at which it sends.
   
@@ -14,9 +14,9 @@ If the measured received time is equal to the time given in the Sender's packet,
 If the time is greater than period defined in Sender's packet, the Receiver will send a "slow down" message.  
 
 ## Sender
-TCP Esther Senders periodically broadcast packets over a network. It also listens for replies from receivers indicate a "speed up" or "slow down" message.
+ECC Senders periodically broadcast packets over a network. It also listens for replies from receivers indicate a "speed up" or "slow down" message.
  
 The rate at which the Sender transmits these packets is adjusted according to responses from Receivers.
 
 ## Receiver
-Receivers listen for TCP Esther packets, and, of needed, replies with a speed up or slow down message.
+Receivers listen for ECC packets, and, of needed, replies with a speed up or slow down message.
